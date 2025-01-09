@@ -15,21 +15,21 @@ public class LiftTester extends LinearOpMode {
     private double liftPower;
     public void runOpMode(){
         expectedManualLiftPos = 0;
-        lift = new Lift(hardwareMap, "liftLeft", "liftRight", "liftLeft", "liftRight");
+        lift = new Lift(hardwareMap, "lift", "lift");
         controller = new GamepadEvents(gamepad1);
         telemetry.addData("Status","Initialized");
         telemetry.update();
-        specimenScore = -1000;
-        bucketScore = -4000;
-        climb = -2000;
+        specimenScore = 1000;
+        bucketScore = 1500;
+        climb = 2000;
 
         waitForStart();
         while(opModeIsActive()) {
 
 //            liftPower = controller.left_trigger.getTriggerValue() - controller.right_trigger.getTriggerValue();
-////            expectedManualLiftPos += (int)(-liftPower * 25);
-////            lift.setNewTargetPosition((expectedManualLiftPos));
-//            lift.moveLift(liftPower);
+//            expectedManualLiftPos += (int)(-liftPower * 25);
+//            lift.setNewTargetPosition((expectedManualLiftPos));
+//            lift.setPower(liftPower);
 
             if (controller.x.onPress())
             {
@@ -44,14 +44,16 @@ public class LiftTester extends LinearOpMode {
             {
                 lift.setPosition(0);
             }
-            telemetry.addData("Expected Target Pos", expectedManualLiftPos);
-            telemetry.addData("Left Lift Power", lift.getLeftMotorPower());
-            telemetry.addData("Right Lift Power", lift.geRightMotorPower());
-            telemetry.addData("Left Lift Position", lift.getLeftPosition());
-            telemetry.addData("Right Lift Position", lift.getRightPosition());
+//            telemetry.addData("Expected Target Pos", expectedManualLiftPos);
+            telemetry.addData(" Lift Pos", lift.getPosition());
+
             telemetry.update();
             controller.update();
         }
     }
 
 }
+
+
+
+
