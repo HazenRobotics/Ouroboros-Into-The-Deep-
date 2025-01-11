@@ -66,7 +66,7 @@ public class SampleAuto extends LinearOpMode{
 
         Actions.runBlocking(
                 robot.actionBuilder(new Pose2d(-14, 5, Math.toRadians(45)))
-                        .lineToX(-23)
+                        .lineToX(-27)
                         .build());
         sleep(500);
         //score first sample
