@@ -60,13 +60,18 @@ public class SampleAuto extends LinearOpMode{
                 robot.actionBuilder(new Pose2d(0, 5, 0))
                      .stopAndAdd(new InstantAction(() ->lift.basicToggle()))
                      .lineToX(-13)
-                        .turn(Math.toRadians(40))
-                        .lineToX(-23)
+                        .turn(Math.toRadians(45))
                         .build());
-                sleep(500);
+                sleep(100);
 
         Actions.runBlocking(
-                robot.actionBuilder(new Pose2d(-23, 5, Math.toRadians(40)))
+                robot.actionBuilder(new Pose2d(-14, 5, Math.toRadians(45)))
+                        .lineToX(-23)
+                        .build());
+        sleep(500);
+
+        Actions.runBlocking(
+                robot.actionBuilder(new Pose2d(-23, 5, Math.toRadians(45)))
                      .stopAndAdd(new InstantAction(() -> bucket.toggle()))
                         .stopAndAdd(new InstantAction(() -> bucket.toggle()))
 
@@ -74,13 +79,13 @@ public class SampleAuto extends LinearOpMode{
         sleep(6000);
 
         Actions.runBlocking(
-                robot.actionBuilder(new Pose2d(-23, 5, Math.toRadians(40)))
+                robot.actionBuilder(new Pose2d(-23, 5, Math.toRadians(45)))
                         .lineToX(-15)
                         .build());
         sleep(10);
 
         Actions.runBlocking(
-                robot.actionBuilder(new Pose2d(-15, 5, Math.toRadians(40)))
+                robot.actionBuilder(new Pose2d(-15, 5, Math.toRadians(45)))
                         .stopAndAdd(new InstantAction(() -> bucket.toggle()))
                         .stopAndAdd(new InstantAction(() -> lift.basicToggle()))
                         .turn(Math.toRadians(90))
