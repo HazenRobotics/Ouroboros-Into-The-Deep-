@@ -1,5 +1,6 @@
 //package org.firstinspires.ftc.teamcode.utils;
 //
+//import com.acmerobotics.roadrunner.ftc.LazyImu;
 //import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 //import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 //import com.qualcomm.robotcore.hardware.IMU;
@@ -13,13 +14,13 @@
 //import java.util.Locale;
 //
 //public class gobildapinpointExampleUsage extends LinearOpMode {
-//    private Imu imu;
+//    public final IMU imu;
 //    GoBildaPinpointDriver odometry;
 //    double oldTime = 0;
 //    int headingOffsetDeg = 0;
 //    @Override
 //    public void runOpMode() throws InterruptedException {
-//
+////        imu = lazyImu.get();
 //        IMU.Parameters parameters = new IMU.Parameters(new RevHubOrientationOnRobot(
 //                RevHubOrientationOnRobot.LogoFacingDirection.UP,
 //                RevHubOrientationOnRobot.UsbFacingDirection.FORWARD
