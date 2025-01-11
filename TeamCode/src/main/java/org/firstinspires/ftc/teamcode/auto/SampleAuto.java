@@ -70,7 +70,6 @@ public class SampleAuto extends LinearOpMode{
 //                        .build());
 //        sleep(500);
 
-
         Actions.runBlocking(
                 robot.actionBuilder(new Pose2d(-18, 5, Math.toRadians(0)))
                         .turn(Math.toRadians(45))
