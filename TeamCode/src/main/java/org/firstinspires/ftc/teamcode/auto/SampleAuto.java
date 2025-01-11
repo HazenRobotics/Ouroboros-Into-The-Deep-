@@ -84,11 +84,12 @@ public class SampleAuto extends LinearOpMode{
                         .build());
         sleep(10);
 
-
-        Actions.runBlocking(
-                robot.actionBuilder(new Pose2d(-27, 5, Math.toRadians(45)))
-                        .turn(Math.toRadians(-135))
-                        .build());
+//        Actions.runBlocking(
+//                robot.actionBuilder(new Pose2d(-19, 5, Math.toRadians(45)))
+//                        .stopAndAdd(new InstantAction(() -> bucket.toggle()))
+//                        .stopAndAdd(new InstantAction(() -> lift.basicToggle()))
+//                        .turn(Math.toRadians(-135))
+//                        .build());
 
         while(opModeIsActive())
         {
