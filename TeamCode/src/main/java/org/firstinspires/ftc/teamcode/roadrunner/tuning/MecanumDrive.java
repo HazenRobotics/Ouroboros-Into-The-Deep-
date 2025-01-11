@@ -40,6 +40,7 @@ import com.qualcomm.robotcore.hardware.VoltageSensor;
 
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.YawPitchRollAngles;
+import org.firstinspires.ftc.teamcode.localization.GoBildaPinpointDriver;
 import org.firstinspires.ftc.teamcode.roadrunner.Drawing;
 import org.firstinspires.ftc.teamcode.roadrunner.Localizer;
 import org.firstinspires.ftc.teamcode.roadrunner.messages.DriveCommandMessage;
@@ -241,7 +242,7 @@ public class MecanumDrive {
 
         voltageSensor = hardwareMap.voltageSensor.iterator().next();
 
-//        localizer = new PinpointOdometrySystem(hardwareMap, "odo");
+//        localizer = new GoBildaPinpointDriver(,True);
 //        localizer = new ThreeDeadWheelLocalizer(hardwareMap);
         IMU imu = hardwareMap.get(IMU.class, "imu");
         localizer = new TwoDeadWheelLocalizer(hardwareMap, lazyImu.get());
