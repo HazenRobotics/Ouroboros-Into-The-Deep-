@@ -20,7 +20,7 @@
  *   SOFTWARE.
  */
 
-package org.firstinspires.ftc.teamcode.roadrunner.tuning;
+package org.firstinspires.ftc.teamcode.localization;
 
 import static com.qualcomm.robotcore.util.TypeConversion.byteArrayToInt;
 
@@ -34,6 +34,8 @@ import com.qualcomm.robotcore.util.TypeConversion;
 
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
+
+
 import org.firstinspires.ftc.robotcore.external.navigation.Pose2D;
 
 import java.nio.ByteBuffer;
@@ -90,22 +92,6 @@ public class GoBildaPinpointDriver extends I2cDeviceSynchDevice<I2cDeviceSynchSi
     public String getDeviceName() {
         return "goBILDA® Pinpoint Odometry Computer";
     }
-
-    public double getXPosMM() {
-        update();
-        return xPosition;
-    }
-
-    public double getYPosMM() {
-        update();
-        return yPosition;
-    }
-
-    public double getHeadingDegrees() {
-        update();
-        return hOrientation;
-    }
-
 
 
     //Register map of the i2c device
@@ -301,15 +287,12 @@ public class GoBildaPinpointDriver extends I2cDeviceSynchDevice<I2cDeviceSynchSi
      * The most common tracking position is the center of the robot. <br> <br>
      * The X pod offset refers to how far sideways (in mm) from the tracking point the X (forward) odometry pod is. Left of the center is a positive number, right of center is a negative number. <br>
      * the Y pod offset refers to how far forwards (in mm) from the tracking point the Y (strafe) odometry pod is. forward of center is a positive number, backwards is a negative number.<br>
-     *
-     * @param xOffset          how sideways from the center of the robot is the X (forward) pod? Left increases
-     * @param yOffset          how far forward from the center of the robot is the Y (Strafe) pod? forward increases
-     * @param headingOffsetDeg
+     * @param xOffset how sideways from the center of the robot is the X (forward) pod? Left increases
+     * @param yOffset how far forward from the center of the robot is the Y (Strafe) pod? forward increases
      */
-    public void setOffsets(double xOffset, double yOffset, double headingOffsetDeg){
+    public void setOffsets(double xOffset, double yOffset){
         writeFloat(Register.X_POD_OFFSET, (float) xOffset);
         writeFloat(Register.Y_POD_OFFSET, (float) yOffset);
-        writeFloat(Register.Y_POD_OFFSET, (float) headingOffsetDeg);
     }
 
     /**
