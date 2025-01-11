@@ -59,36 +59,43 @@ public class SampleAuto extends LinearOpMode{
                 Actions.runBlocking(
                 robot.actionBuilder(new Pose2d(0, 5, 0))
                      .stopAndAdd(new InstantAction(() ->lift.basicToggle()))
-                     .lineToX(-13)
-                        .turn(Math.toRadians(45))
+                     .lineToX(-19)
+//                        .turn(Math.toRadians(45))
                         .build());
                 sleep(100);
 
+//        Actions.runBlocking(
+//                robot.actionBuilder(new Pose2d(-14, 5, Math.toRadians(45)))
+//                        .lineToX(-30)
+//                        .build());
+//        sleep(500);
+
         Actions.runBlocking(
-                robot.actionBuilder(new Pose2d(-14, 5, Math.toRadians(45)))
-                        .lineToX(-30)
+                robot.actionBuilder(new Pose2d(-18, 5, Math.toRadians(0)))
+                        .turn(Math.toRadians(45))
                         .build());
         sleep(500);
+
         //score first sample
         Actions.runBlocking(
-                robot.actionBuilder(new Pose2d(-30, 5, Math.toRadians(45)))
+                robot.actionBuilder(new Pose2d(-18, 5, Math.toRadians(0)))
                      .stopAndAdd(new InstantAction(() -> bucket.toggle()))
                         .stopAndAdd(new InstantAction(() -> bucket.toggle()))
 
                 .build());
-        sleep(4000);
-
-        Actions.runBlocking(
-                robot.actionBuilder(new Pose2d(-30, 5, Math.toRadians(45)))
-                        .lineToX(-27)
-                        .build());
-        sleep(10);
-
-
-        Actions.runBlocking(
-                robot.actionBuilder(new Pose2d(-27, 5, Math.toRadians(45)))
-                        .turn(Math.toRadians(135))
-                        .build());
+//        sleep(4000);
+//
+//        Actions.runBlocking(
+//                robot.actionBuilder(new Pose2d(-30, 5, Math.toRadians(45)))
+//                        .lineToX(-27)
+//                        .build());
+//        sleep(10);
+//
+//
+//        Actions.runBlocking(
+//                robot.actionBuilder(new Pose2d(-27, 5, Math.toRadians(45)))
+//                        .turn(Math.toRadians(-135))
+//                        .build());
 
         while(opModeIsActive())
         {
